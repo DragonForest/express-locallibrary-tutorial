@@ -1,0 +1,29 @@
+//- html
+//-     body(style={'background-image': 'url(/images/AnabellaRoss.jpeg)'})
+//-         blockquote(style={'color': 'white', 
+//-                         'font-size': '6vh',
+//-                         'padding-top': '15%',
+//-                         'width': '50%', 
+//-                         'height': '50%', 
+//-                         'border': '5pt red solid',
+//-                         'text-align': 'center',
+//-                         'text-align-vertical': 'center'}) I'm Anabella Ross, and I love my hair . . . 
+//-         //- h1(style={'color': 'white'}) Hi There
+
+extends layout
+block content
+    h1=title
+    p Welcome to #[em LocalLibrary], a very basic Express website developed as a tutorial example on the Mozilla Developer Network.
+
+    h2 Dynamic content
+    if error
+        p Error getting dynamic content.
+    else 
+        p The library has the following record counts:
+
+        ul
+            li #[strong Books:] !{data.book_count}
+            li #[strong Copies:] !{data.book_instance_count}
+            li #[strong Copies available:] !{data.book_instance_available_count}
+            li #[strong Authors:] !{data.author_count}
+            li #[strong Genres:] !{data.genre_count}
