@@ -12,7 +12,8 @@ var app = express();
 var mongoose = require('mongoose');
 // var mongoDB = 'mongodb+srv://ross_jon:p1ssw0rd@cluster0-r92qc.mongodb.net/local_library?retryWrites=true';
 //mongodb+srv://ross_jon:<password>@cluster0-r92qc.mongodb.net/test?retryWrites=true
-var dev_db_url = 'mongodb+srv://ross_jon:p1ssw0rd@cluster0-r92qc.mongodb.net/local_library?retryWrites=true';
+// var dev_db_url = 'mongodb+srv://ross_jon:p1ssw0rd@cluster0-r92qc.mongodb.net/local_library?retryWrites=true';
+var dev_db_url = 'mongodb+srv://ross_jon:p1ssw0rd@cluster0-ua7mb.mongodb.net/local_library?retryWrites=true';
 var mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, {useNewUrlParser: true});
 var db = mongoose.connection;
