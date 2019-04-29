@@ -7,6 +7,7 @@ var sassMiddleware = require('node-sass-middleware');
 var indexRouter = require(path.join(__dirname, 'routes/index'));
 var usersRouter = require(path.join(__dirname, 'routes/users'));
 var catalogRouter = require(path.join(__dirname, 'routes/catalog'));
+var cors = require('cors');
 
 var app = express();
 var mongoose = require('mongoose');
@@ -34,5 +35,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/catalog', catalogRouter);
+app.use(cors());
 
 module.exports = app;
