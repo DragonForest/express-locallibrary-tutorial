@@ -31,11 +31,8 @@ app.use(sassMiddleware({
   sourceMap: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/catalog', catalogRouter);
 app.use(cors());
+app.options('*',cors());
 var allowCrossDomain = function(req,res,next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
@@ -43,4 +40,9 @@ var allowCrossDomain = function(req,res,next) {
   next();  
 }
 app.use(allowCrossDomain);
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/catalog', catalogRouter);
+
 module.exports = app;
